@@ -1,0 +1,47 @@
+<h1>Search for your favorite wine!</h1>
+
+<label>Wine Name</label>
+<input ng-model="WineSearchParams.wineName" type="text" placeholder=""/><br>
+
+
+
+<label>Number of Results</label>
+<input ng-model="WineSearchParams.numOfResults" type="text" placeholder="10"/><br>
+
+
+
+<label>Color</label>
+<select ng-model="WineSearchParams.drinkColor">
+  <option value="red">Red</option>
+  <option value="white">White</option>
+</select><br>
+
+
+<label>Max Price</label>
+<input ng-model="WineSearchParams.maxPrice" type="number" placeholder=""/> <br>
+
+
+
+<label>Min Price</label>
+<input ng-model="WineSearchParams.minPrice" type="number" placeholder=""/> <br>
+
+
+
+<label>Max Rating</label>
+<input ng-model="WineSearchParams.maxRating" type="number"/><br>
+
+
+
+<label>Min Rating</label>
+<input ng-model="WineSearchParams.minRating" type="number"/><br>
+
+<label> Sort By </label>
+<select ng-model="WineSearchParams.sortBy">
+  <option value="sr">Rank</option>
+  <option value="price+asc">Price Ascending</option>
+  <option value="price+desc">Price Descending</option>
+  <option value="vintage+asc">Vintage Ascending</option>
+  <option value="vintage+desc">Vintage Descending</option>
+</select><br>
+
+<button ng-click="searchWine()" class="btn btn-default">Submit</button>

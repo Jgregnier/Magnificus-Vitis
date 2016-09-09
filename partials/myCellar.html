@@ -1,0 +1,9 @@
+<div class="cellarHolder container" ng-repeat="wine in wines">
+    <div>{{wine.WineId}}</div>
+    <div>{{wine.PersonalRating}}</div>
+    <div>{{wine.PersonalComment}}</div>
+    <div>{{wine.uid}}</div>
+    <button ng-click="findWine(wine.WineId)" class="btn btn-info">Find this Wine</button>
+    <button ng-click="deleteWine(wine.key)" class="btn btn-danger">Throw this bottle out</button>
+
+</div>
