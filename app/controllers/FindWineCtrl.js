@@ -9,10 +9,12 @@ app.controller('FindWineCtrl', function ($scope, WineFactory) {
     WineFactory.getLocalStores($scope.zipCode)
     .then((localStores) => {
       console.log(localStores);
-      for(let store in localStores){
-        if (localStores[store].state ==="TN") {
-          $scope.storesArray.push(localStores[store]);
-        };
+      for(let i=0; i < 25; i++){
+      // for(let store in localStores){
+        // if (localStores[store].state ==="TN") {
+        //   $scope.storesArray.push(localStores[store]);
+        // };
+        $scope.storesArray.push(localStores[i]);
       };
       console.log($scope.storesArray);
     });
