@@ -24,7 +24,12 @@ app.factory('WineFactory', function($http, $q, SnoothKey) {
       $http.get(`http://api.snooth.com/stores/?akey=${SnoothKey}&c=US&z=${zipCode}`)
       .success((localStores) => {
         console.log(localStores);
-        resolve(localStores.stores)
+        var storesArray = [];
+        for(let i=0; i < 25; i++){
+          storesArray.push(localStores.stores[i]);
+        }
+        var storesObj = {stores: storesArray};
+        resolve(storesObj);
       });
     });
   };

@@ -8,21 +8,30 @@
 <body ng-app="Magnificus-Vitis">
 
   <div ng-include="'partials/navBar.html'"></div>
-  <div class="col-xs-12" ng-view></div>
+
+  <div class="col-xs-12" ng-view>
+
+  </div>
 
 <!-- Third parties script tags -->
+<script src="lib/bower_components/lodash/dist/lodash.min.js"></script>
+<script src="lib/bower_components/angular/angular.min.js"></script>
+<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+<script src="lib/bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+<script src="lib/bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+
+<script src="lib/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<script src="lib/bower_components/angular/angular.min.js"></script>
-<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
 <script src="lib/bower_components/firebase/firebase.js"></script>
-<script src="lib/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
 <!-- Main Module -->
 <script src="app/app.js"></script>
 <!-- Controllers -->
 <script src="app/controllers/FindWineCtrl.js"></script>
+<script src="app/controllers/GoogleMapModalCtrl.js"></script>
 <script src="app/controllers/MyCellarCtrl.js"></script>
 <script src="app/controllers/MyCellarModalCtrl.js"></script>
 <script src="app/controllers/NavBarCtrl.js"></script>

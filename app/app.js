@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("Magnificus-Vitis", ["ngRoute", 'ui.bootstrap'])
+var app = angular.module("Magnificus-Vitis", ["ngRoute", 'ui.bootstrap', 'uiGmapgoogle-maps'])
 .constant('FirebaseUrl', "https://magnificus-vitis.firebaseio.com/");
 
 app.config(function($routeProvider) {
@@ -22,4 +22,12 @@ app.config(function($routeProvider) {
     controller: 'MyCellarCtrl'
   }).
   otherwise('/wines/search');
+});
+
+app.config(function (uiGmapGoogleMapApiProvider, GoogleMapKey) {
+  uiGmapGoogleMapApiProvider.configure({
+    key: GoogleMapKey,
+    v: '3.25',
+    libraries: 'weather, geometry, visualization'
+  });
 });
