@@ -12,6 +12,7 @@ app.factory('WineFactory', function($http, $q, SnoothKey) {
     return $q((resolve, reject) => {
       $http.get(`http://api.snooth.com/wines/?akey=${SnoothKey}&q=${WineObj.wineName}&n=${WineObj.numOfResults}&t=${WineObj.typeOfDrink}&color=${WineObj.drinkColor}&s=${WineObj.sortBy}&mp=${WineObj.minPrice}&xp=${WineObj.maxPrice}&mr=${WineObj.minRating}&xr=${WineObj.maxRating}`)
       .success((wineList) => {
+        console.log(wineList);
         wineResults = wineList.wines;
         resolve(wineList);
       });

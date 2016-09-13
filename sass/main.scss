@@ -1,4 +1,10 @@
 .wineCard {
-  border: black solid 2px
+  box-shadow: 2px 2px 3px #aaa;
+  padding: 10px;
+  text-align: center;
+  height: 450px;
+}
 
+#personalComment {
+  y-overflow: auto;
 }

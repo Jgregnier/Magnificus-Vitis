@@ -10,7 +10,7 @@ app.controller('WineSearchCtrl', function ($scope, WineFactory, $location) {
     minPrice: "",
     maxPrice: "",
     minRating: "",
-    maxRating: "",
+    maxRating: "5",
     sortBy: ""
   };
 

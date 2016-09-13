@@ -11,23 +11,27 @@
   <div class="col-xs-12" ng-view></div>
 
 <!-- Third parties script tags -->
-<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
-<script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="lib/bower_components/angular/angular.min.js"></script>
+<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+<script src="lib/bower_components/firebase/firebase.js"></script>
+<script src="lib/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
 <!-- Main Module -->
-<script type="text/javascript" src="app/app.js"></script>
+<script src="app/app.js"></script>
 <!-- Controllers -->
-<script type="text/javascript" src="app/controllers/NavBarCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/MyCellarCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/WineSearchCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/WineListCtrl.js"></script>
+<script src="app/controllers/NavBarCtrl.js"></script>
+<script src="app/controllers/MyCellarCtrl.js"></script>
+<script src="app/controllers/WineSearchCtrl.js"></script>
+<script src="app/controllers/WineListCtrl.js"></script>
+<script src="app/controllers/WineListModalCtrl.js"></script>
+<script src="app/controllers/MyCellarModalCtrl.js"></script>
 <!-- Facotries -->
-<script type="text/javascript" src="app/factories/WineFactory.js"></script>
-<script type="text/javascript" src="app/factories/FirebaseFactory.js"></script>
+<script src="app/factories/WineFactory.js"></script>
+<script src="app/factories/FirebaseFactory.js"></script>
 <!-- Values -->
-<script type="text/javascript" src="app/values/Creds.js"></script>
+<script src="app/values/Creds.js"></script>
 </body>
 </html>

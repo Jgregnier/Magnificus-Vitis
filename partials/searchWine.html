@@ -6,7 +6,11 @@
 
 
 <label>Number of Results</label>
-<input ng-model="WineSearchParams.numOfResults" type="text" placeholder="10"/><br>
+<select ng-model="WineSearchParams.numOfResults">
+  <option>15</option>
+  <option>30</option>
+  <option>50</option>
+</select><br>
 
 
 
@@ -21,19 +25,17 @@
 <input ng-model="WineSearchParams.maxPrice" type="number" placeholder=""/> <br>
 
 
-
 <label>Min Price</label>
 <input ng-model="WineSearchParams.minPrice" type="number" placeholder=""/> <br>
 
-
-
-<label>Max Rating</label>
-<input ng-model="WineSearchParams.maxRating" type="number"/><br>
-
-
-
 <label>Min Rating</label>
-<input ng-model="WineSearchParams.minRating" type="number"/><br>
+<select ng-model="WineSearchParams.minRating">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+<br>
 
 <label> Sort By </label>
 <select ng-model="WineSearchParams.sortBy">

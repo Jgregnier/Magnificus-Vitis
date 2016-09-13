@@ -1,5 +1,5 @@
-node_modules
-.sass_cache
 bower_components
+node_modules
+lib/.sass-cache
 css
 app/values/Creds.js

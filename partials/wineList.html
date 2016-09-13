@@ -1,14 +1,13 @@
 <h1>Your Wines</h1>
 <div ng-repeat="wine in wineResults">
-  <div class="col-md-4 wineCard">
-    <div>{{wine.name}}</div>
-    <div>Varietal : {{wine.varietal}}</div>
-    <div>Vintage : {{wine.vintage}}</div>
-    <div>Region : {{wine.region}}</div>
-    <div>Price : {{wine.price}}</div>
-    <div>Rating : {{wine.snoothrank}}</div>
-    <img ng-src={{wine.image}}>
-    <button ng-click="saveWine(wine.code)" class="btn btn-success">Send to My Cellar</button>
-    <button ng-click="findWine(wine.code)" class="btn btn-info">Find this Wine</button>
+  <div class="col-md-4 wineCard" ng-click="open(wine)">
+    <p>{{wine.name}}</p>
+    <p>Varietal : {{wine.varietal}}</p>
+    <p>Vintage : {{wine.vintage}}</p>
+    <p>Region : {{wine.region}}</p
+    <p>Price : {{wine.price}}</p>
+    <div>Rating : {{wine.snoothrank}}</p>
+    <img ng-src={{wine.image}}> <br>
+    </div>
   </div>
 </div>

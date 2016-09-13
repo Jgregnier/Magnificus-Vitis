@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("Magnificus-Vitis", ["ngRoute"])
+var app = angular.module("Magnificus-Vitis", ["ngRoute", 'ui.bootstrap'])
 .constant('FirebaseUrl', "https://magnificus-vitis.firebaseio.com/");
 
 app.config(function($routeProvider) {

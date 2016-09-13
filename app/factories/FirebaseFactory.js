@@ -2,21 +2,11 @@
 
 app.factory('FirebaseFactory', function ($q, $http, FbCreds, FirebaseUrl) {
 
-  // let getMyWines = () => {
-  //   $q((resolve, reject) => {
-  //     $http.get(`${FirebaseUrl}/wines.json?orderBy="uid"&equalTo="${AuthFactory.getUserId()}"`)
-  //     .success((myWines) => {
-  //       console.log("my Wines", myWines);
-  //       resolve(myWines);
-  //     });
-  //   });
-  // };
-  // return {getMyWines};
-
   let getMyWines = () => {
     return $q((resolve, reject) => {
       $http.get(`${FirebaseUrl}wines.json`)
       .success((myWines) => {
+        console.log(myWines);
         Object.keys(myWines).forEach((key) => {
           myWines[key].key = key;
         });
@@ -42,5 +32,14 @@ app.factory('FirebaseFactory', function ($q, $http, FbCreds, FirebaseUrl) {
       });
     });
   };
-  return {getMyWines, saveWine, deleteWine};
+
+  let editWine = (wineKey, wineObj) => {
+    return $q((resolve, reject) => {
+      $http.patch(`${FirebaseUrl}wines/${wineKey}.json`, JSON.stringify(wineObj))
+      .success((data) => {
+        resolve(data);
+      });
+    });
+  };
+  return {getMyWines, saveWine, deleteWine, editWine};
 });
