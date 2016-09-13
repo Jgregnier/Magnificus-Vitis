@@ -13,6 +13,10 @@ app.config(function($routeProvider) {
     templateUrl: 'partials/wineList.html',
     controller: 'WineListCtrl'
   }).
+  when('/wines/find', {
+    templateUrl: 'partials/findWine.html',
+    controller: 'FindWineCtrl'
+  }).
   when('/mycellar', {
     templateUrl: 'partials/myCellar.html',
     controller: 'MyCellarCtrl'
