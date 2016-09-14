@@ -28,5 +28,9 @@ app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalIns
     zoom: 8
   };
 
+  $scope.showStore = () => {
+
+  };
+
   populateMarkers(stores);
 });
