@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <p>Wine stores near you</p>
+</div>
+
+<div class="modal-body">
+  <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+  <ui-gmap-markers models="markers" coords="'self'" click="showStore" ></ui-gmap-markers>
+  </ui-gmap-google-map>
+
+</div>
+
+
+<div class="modal-footer">
+  <button ng-click="close()" class="btn btn-danger" > Close</button>
+</div>

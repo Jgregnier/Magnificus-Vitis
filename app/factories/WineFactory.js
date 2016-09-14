@@ -19,15 +19,29 @@ app.factory('WineFactory', function($http, $q, SnoothKey) {
     });
   };
 
-  let getLocalStores = (zipCode) => {
+  let getLocalStores = (latAndLng) => {
     return $q((resolve, reject) => {
-      $http.get(`http://api.snooth.com/stores/?akey=${SnoothKey}&c=US&z=${zipCode}`)
+      $http.get(`http://api.snooth.com/stores/?akey=${SnoothKey}&lat=${latAndLng.lat}&lng=${latAndLng.lng}`)
       .success((localStores) => {
-        console.log(localStores);
-        resolve(localStores.stores)
+        console.log("localStores", localStores);
+        var storesArray = [];
+        for(let i=0; i < 25; i++){
+          storesArray.push(localStores.stores[i]);
+        }
+        var storesObj = {stores: storesArray};
+        resolve(storesObj);
       });
     });
   };
 
-  return {getWine, getWineResults, getLocalStores};
+  let getWineInfo = (wineCode, location) => {
+    return $q((resolve, reject) => {
+      $http.get(`http://api.snooth.com/stores/?akey=${SnoothKey}&id=${wineCode}&lat=${location.lat}&lng=${location.lng}`)
+      .success((localWine) => {
+        console.log("local wine", localWine);
+      });
+    });
+  };
+
+  return {getWine, getWineResults, getLocalStores, getWineInfo};
 });

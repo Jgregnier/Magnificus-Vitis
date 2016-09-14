@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory) {
+app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory, AuthFactory, WineFactory) {
   $scope.wine = wine;
 
   $scope.close = () => {
@@ -20,7 +20,8 @@ app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, Fi
       wineId: wine.code,
       wineImage: wine.image,
       personalRating: "",
-      personalComment: ""
+      personalComment: "",
+      uid: AuthFactory.getUserId()
     };
 
     console.log(newWine);
@@ -31,7 +32,8 @@ app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, Fi
   };
 
   $scope.find = () => {
-    console.log("lol");
+    console.log("wineCode", wine.code, "location", AuthFactory.getLocation());
+    WineFactory.getWineInfo(wine.code, AuthFactory.getLocation());
   };
 
 });
