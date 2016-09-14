@@ -2,9 +2,14 @@
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" ng-repeat="Link in navLinks">
-        <li><a href="{{Link.url}}">{{Link.name}}</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="!isLoggedIn"><a ng-href="#/login">Login</a></li>
+        <li ng-show="isLoggedIn"><a ng-href="#/wines/find">Wine Find</a></li>
+        <li ng-show="isLoggedIn"><a ng-href="#/wines/search">Wine Search</a></li>
+        <li ng-show="isLoggedIn"><a ng-href="#/mycellar">My Cellar</a></li>
+        <li ng-show="isLoggedIn" ng-click="logout()"><a href="#/login">Logout</a></li>
       </ul>
     </div>
+
   </div>
 </div>

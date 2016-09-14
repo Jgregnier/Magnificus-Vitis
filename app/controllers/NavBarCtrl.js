@@ -1,14 +1,18 @@
 "use strict";
 
-app.controller("NavBarCtrl", function($scope, $location) {
+app.controller("NavBarCtrl", function($scope, $location, AuthFactory, $window) {
 
-  $scope.navLinks = [
-    {url: "#/logout", name: "Logout"},
-    {url: "#/login", name: "Login"},
-    {url: "#/mycellar", name: "My Cellar"},
-    {url: "#/wines/search", name: "Search For Wine"},
-    {url: "#/wines/find", name: "Find Wine"}
-  ];
+  $scope.logout = () => {
+    AuthFactory.logout()
+    .then((logoutData) => {
+      $window.location.href = '#/login';
+      console.log('Logged out', logoutData);
+    });
+  };
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    $scope.isLoggedIn = AuthFactory.isAuthenticated();
+  });
 
   $scope.isActive = (viewLocation) => viewLocation === $location.path();
 });

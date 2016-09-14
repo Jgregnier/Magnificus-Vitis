@@ -1,10 +1,10 @@
 "use strict";
 
-app.factory('FirebaseFactory', function ($q, $http, FbCreds, FirebaseUrl) {
+app.factory('FirebaseFactory', function ($q, $http, FbCreds, FirebaseUrl, AuthFactory) {
 
   let getMyWines = () => {
     return $q((resolve, reject) => {
-      $http.get(`${FirebaseUrl}wines.json`)
+      $http.get(`${FirebaseUrl}wines.json?orderBy="uid"&equalTo="${AuthFactory.getUserId()}"`)
       .success((myWines) => {
         console.log(myWines);
         Object.keys(myWines).forEach((key) => {
