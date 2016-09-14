@@ -31,10 +31,10 @@ app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, Fi
     });
   };
 
-  $scope.find = () => {
-    console.log("wineCode", wine.code, "location", AuthFactory.getLocation());
-    WineFactory.getWineInfo(wine.code, AuthFactory.getLocation());
-  };
+  // $scope.find = () => {
+  //   console.log("wineCode", wine.code, "location", AuthFactory.getLocation());
+  //   WineFactory.getWineInfo(wine.code, AuthFactory.getLocation());
+  // };
 
 });
 

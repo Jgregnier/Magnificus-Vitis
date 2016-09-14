@@ -13,18 +13,21 @@ app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalIns
         latitude: stores[store].lat,
         longitude: stores[store].lng
       });
-      console.log($scope.markers);
     }
+      console.log($scope.markers);
   };
 
   $scope.close = () => {
+    $scope.markers = [];
+    stores = [];
     $uibModalInstance.close();
   };
 
   $scope.map = {
     center: {
-      latitude: 36.1627,
-      longitude: -86.7816 },
+      latitude: stores[0].lat,
+      longitude: stores[0].lng
+    },
     zoom: 8
   };
 
