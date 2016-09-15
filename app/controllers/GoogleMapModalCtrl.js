@@ -6,7 +6,9 @@ app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalIns
 
   $scope.markers = [];
 
-  $scope.windowOptions = { visible: false };
+  $scope.windowOptions = { visibile: true };
+
+  $scope.windowsControl = {};
 
   $scope.map = {
     center: {
@@ -41,13 +43,21 @@ app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalIns
     populateMarkers(stores);
   });
 
-
   $scope.showStore = (instance, event, markerData) => {
-    $scope.windowOptions.visible = !$scope.windowOptions.visible;
+    var windows = $scope.windowsControl.getPlurals();
+    var windowKeys = $scope.windowsControl.getPlurals().keys();
+
+    for(let i=0; i < 25; i++){
+      windows.get(windowKeys[i]).hideWindow();
+    }
+
+    windows.get(markerData.id).showWindow();
+
 
     console.log("instance", instance, "markerData", markerData);
 
     $scope.windowData = {
+      id: markerData.id,
       name: markerData.name,
       address: markerData.address,
       phone: markerData.phone,
@@ -55,6 +65,8 @@ app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalIns
       city: markerData.city,
       state: markerData.state
     };
+    console.log("window data", $scope.windowData);
+
   };
 
   $scope.closeClick = () => {
