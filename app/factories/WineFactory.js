@@ -34,14 +34,5 @@ app.factory('WineFactory', function($http, $q, SnoothKey) {
     });
   };
 
-  // let getWineInfo = (wineCode, location) => {
-  //   return $q((resolve, reject) => {
-  //     $http.get(`http://api.snooth.com/stores/?akey=${SnoothKey}&id=${wineCode}&i=1&lat=${location.lat}&lng=${location.lng}`)
-  //     .success((localWine) => {
-  //       console.log("local wine", localWine);
-  //     });
-  //   });
-  // };
-
   return {getWine, getWineResults, getLocalStores};
 });
