@@ -1,7 +1,20 @@
 "use strict";
 
-app.controller('FindWineCtrl', function ($scope, WineFactory, $uibModal, GoogleGeoFactory) {
+app.controller('FindWineCtrl', function ($scope, WineFactory, $uibModal, GoogleGeoFactory, AuthFactory) {
   $scope.zipCode = "";
+
+  $scope.findWithLocation = () => {
+    WineFactory.getLocalStores(AuthFactory.getLocation())
+      .then((localStores) => {
+        console.log(localStores);
+
+      let modalInstance = $uibModal.open({
+        templateUrl: '../partials/googleMapModal.html',
+        controller: 'GoogleMapModalCtrl',
+        resolve: {localStores}
+      });
+    });
+  };
 
   $scope.find = (zipCode) => {
     console.log(zipCode);
@@ -21,7 +34,6 @@ app.controller('FindWineCtrl', function ($scope, WineFactory, $uibModal, GoogleG
           resolve: {localStores}
         });
       });
-  });
+    });
   };
-
 });

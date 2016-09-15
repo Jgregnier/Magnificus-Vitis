@@ -1,12 +1,25 @@
 <div class="modal-header">
-  <p>Wine stores near you</p>
+  <h1>Wine stores near you</h1>
 </div>
 
 <div class="modal-body">
-  <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-  <ui-gmap-markers models="markers" coords="'self'" click="showStore" ></ui-gmap-markers>
+  <ui-gmap-google-map center='map.center' zoom='map.zoom' control='map.control'>
+    <ui-gmap-markers models="markers" coords="'self'" click="showStore" >
+      <ui-gmap-windows
+      control="windowsControl"
+      idKey="windowData.id"
+      models="markers"
+      options="windowOptions"
+      closeClick="closeClick()">
+        <div>
+        <p>{{windowData.name}}</p>
+        <p>{{windowData.address}}, {{windowData.city}}, {{windowData.state}}</p>
+        <p>{{windowData.phone}}</p>
+        <a ng-href="windowData.website">{{windowData.website}}</a>
+        </div>
+      </ui-gmap-windows>
+    </ui-gmap-markers>
   </ui-gmap-google-map>
-
 </div>
 
 
