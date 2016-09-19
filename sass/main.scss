@@ -1,14 +1,47 @@
+$transparentGrey: rgba(211, 211, 211, .3);
+
 body {
   font-family: "Times New Roman", Georgia, Serif;
-  background: url("https://images5.alphacoders.com/398/398077.jpg");
-  background-size: cover;
+  font-size: 20px;
 }
 
 $body-bg: transparent;
 
+.navbar {
+  margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: $transparentGrey;
+  border: none;
+}
+
+#loginBox {
+  margin: auto;
+  text-align: center;
+  width: 450px;
+  input {
+    color: black;
+    background-color: $transparentGrey;
+  }
+}
+
 #mainHeader {
   margin: 10px;
   color: #660033;
+}
+
+#mainView {
+  height: 100vh;
+  overflow-y: auto;
+  background: url("https://images5.alphacoders.com/398/398077.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 0 0 0;
+}
+
+#partialView {
+  margin-top: 70px;
 }
 
 .md-button:hover {
@@ -29,28 +62,32 @@ $body-bg: transparent;
 .redBtn {
   color: #FFF;
   background-color: #cc0000;
-
-  :hover {
-    color: #cc0000 !important;
-    background-color: #EBEBEB !important;
-  }
 }
 
 .wineCard {
   border: black 1px solid;
   padding: 10px;
-  margin: 30px;
+  margin:20px 4.16% 20px 4.16%;
   text-align: center;
-  height: 375px
+  height: 375px;
+  background-color: $transparentGrey;
+  color: black;
+  img {
+    height: 142px;
+    display: block;
+    margin-left: 30%;
+  }
 }
 
 .wineSearchPage {
   text-align: center;
   input {
     margin-top: 10px;
+    background-color: $transparentGrey;
   }
   select {
     margin-top: 10px;
+    background-color: $transparentGrey;
   }
 }
 
@@ -60,6 +97,13 @@ $body-bg: transparent;
 
 .findWine {
   text-align: center;
+  input {
+    background-color: $transparentGrey;
+  }
+}
+
+#findZip::-webkit-input-placeholder {
+    color: black;
 }
 
 .angular-google-map-container {

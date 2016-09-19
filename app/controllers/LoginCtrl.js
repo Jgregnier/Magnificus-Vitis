@@ -9,6 +9,7 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
   $scope.loginWithEmailAndPassword = () => {
     AuthFactory.loginUserWithEmail($scope.account)
     .then((data) => {
+      $mdToast.show($mdToast.simple().position("top right").textContent("Welcome!"));
       console.log("logged in with email data", data);
       $window.location.href = '#/wines/search';
     });
@@ -26,9 +27,9 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
     AuthFactory.loginUserWithGoogle()
     .then((userData) => {
       if (userData) {
+        $mdToast.show($mdToast.simple().position("top right").textContent(`Welcome ${userData.user.displayName}`));
         console.info('Google login data:', userData);
         $window.location.href = '#/wines/search';
-        $mdToast.show($mdToast.simple().position("top right").textContent(`Welcome ${userData.user.displayName}`));
       }
     });
   };

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory, AuthFactory, WineFactory) {
+app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory, AuthFactory, WineFactory, $mdToast) {
   $scope.wine = wine;
 
   $scope.close = () => {
@@ -25,6 +25,7 @@ app.controller('WineListModalCtrl', function($scope, $uibModalInstance, wine, Fi
     };
 
     console.log(newWine);
+    $mdToast.show($mdToast.simple().position("top right").textContent("Wine sent to your cellar"));
     FirebaseFactory.saveWine(newWine)
     .then (() => {
       $scope.close();
