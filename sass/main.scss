@@ -1,15 +1,61 @@
 body {
   font-family: "Times New Roman", Georgia, Serif;
 }
-.wineCard {
-  box-shadow: 2px 2px 3px #aaa;
-  padding: 10px;
-  text-align: center;
-  height: 450px;
+
+#mainHeader {
+  margin: 10px;
+  color: #660033;
 }
 
-#personalComment {
-  y-overflow: auto;
+.md-button:hover {
+  color: #993366;
+  background-color: #FFF;
+}
+
+.purpleBtn {
+  color: #FFF;
+  background-color: #993366;
+
+  :hover {
+    color: #993366;
+    background-color: #EBEBEB;
+  }
+}
+
+.redBtn {
+  color: #FFF;
+  background-color: #cc0000;
+
+  :hover {
+    color: #cc0000 !important;
+    background-color: #EBEBEB !important;
+  }
+}
+
+.wineCard {
+  border: black 1px solid;
+  padding: 10px;
+  margin: 30px;
+  text-align: center;
+  height: 375px
+}
+
+.wineSearchPage {
+  text-align: center;
+  input {
+    margin-top: 10px;
+  }
+  select {
+    margin-top: 10px;
+  }
+}
+
+.myCellarModal {
+  text-align: center;
+}
+
+.findWine {
+  text-align: center;
 }
 
 .angular-google-map-container {

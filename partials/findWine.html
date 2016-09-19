@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>Use your location to find stores near you, or enter a zipcode </h1>
-  <button class="btn btn-primary" ng-click="findWithLocation()">Use my location</button> <br>
-  <input type="text" ng-model="zipCode">
-  <button class="btn btn-primary" ng-click="find(zipCode)">Find Stores</button>
+  <div class="findWine">
+    <h1>Use your location to find stores near you, or enter a zipcode </h1>
+    <button class="md-button purpleBtn" ng-click="findWithLocation()">Use my location</button>
+    <p>OR</p>
+    <input type="text" ng-model="zipCode" placeholder="Input Zip Code Here">
+    <button class="md-button purpleBtn" ng-click="find(zipCode)">Find Stores</button>
+  <div>
 </div>
