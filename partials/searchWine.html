@@ -22,12 +22,21 @@
 </select><br>
 
 
-<label>Max Price</label>
+<!-- <label>Max Price</label>
 <input ng-model="WineSearchParams.maxPrice" type="number" placeholder=""/> <br>
 
 
 <label>Min Price</label>
-<input ng-model="WineSearchParams.minPrice" type="number" placeholder=""/> <br>
+<input ng-model="WineSearchParams.minPrice" type="number" placeholder=""/> <br> -->
+
+<label> Price Range </label>
+<select ng-model="priceRange">
+  <option value="0-25">0 - 25$</option>
+  <option value="25-50">25 - 50$</option>
+  <option value="50-75">50 - 75$</option>
+  <option value="75-100">75 - 100$ </option>
+  <option value="100-1000"> 100$ +</option>
+</select><br>
 
 <label>Min Rating</label>
 <select ng-model="WineSearchParams.minRating">
