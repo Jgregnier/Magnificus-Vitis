@@ -1,8 +1,9 @@
 "use strict";
 
-app.controller("NavBarCtrl", function($scope, $location, AuthFactory, $window) {
+app.controller("NavBarCtrl", function($scope, $location, AuthFactory, $window, $mdToast) {
 
   $scope.logout = () => {
+    $mdToast.show($mdToast.simple().position("top right").textContent('Log out complete!'));
     AuthFactory.logout()
     .then((logoutData) => {
       $window.location.href = '#/login';

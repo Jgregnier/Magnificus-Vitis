@@ -1,3 +1,5 @@
+$transparentGrey: rgba(211, 211, 211, .3);
+
 body {
   font-family: "Times New Roman", Georgia, Serif;
   font-size: 20px;
@@ -10,7 +12,7 @@ $body-bg: transparent;
   position: fixed;
   width: 100%;
   z-index: 100;
-  background-color: rgba(211, 211, 211, .9);
+  background-color: $transparentGrey;
   border: none;
 }
 
@@ -18,6 +20,10 @@ $body-bg: transparent;
   margin: auto;
   text-align: center;
   width: 450px;
+  input {
+    color: black;
+    background-color: $transparentGrey;
+  }
 }
 
 #mainHeader {
@@ -64,16 +70,24 @@ $body-bg: transparent;
   margin:20px 4.16% 20px 4.16%;
   text-align: center;
   height: 375px;
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: $transparentGrey;
+  color: black;
+  img {
+    height: 142px;
+    display: block;
+    margin-left: 30%;
+  }
 }
 
 .wineSearchPage {
   text-align: center;
   input {
     margin-top: 10px;
+    background-color: $transparentGrey;
   }
   select {
     margin-top: 10px;
+    background-color: $transparentGrey;
   }
 }
 
@@ -83,6 +97,13 @@ $body-bg: transparent;
 
 .findWine {
   text-align: center;
+  input {
+    background-color: $transparentGrey;
+  }
+}
+
+#findZip::-webkit-input-placeholder {
+    color: black;
 }
 
 .angular-google-map-container {
