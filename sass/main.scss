@@ -1,6 +1,10 @@
 body {
   font-family: "Times New Roman", Georgia, Serif;
+  background: url("https://images5.alphacoders.com/398/398077.jpg");
+  background-size: cover;
 }
+
+$body-bg: transparent;
 
 #mainHeader {
   margin: 10px;

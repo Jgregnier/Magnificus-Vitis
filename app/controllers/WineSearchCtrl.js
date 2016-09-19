@@ -26,35 +26,8 @@ app.controller('WineSearchCtrl', function ($scope, WineFactory, $location) {
 
   var setPrice = () => {
     var prices = $scope.priceRange.split("-");
-    console.log(prices);
-
     $scope.WineSearchParams.minPrice = prices[0];
     $scope.WineSearchParams.maxPrice = prices[1];
-
-    // if ($scope.priceRange === "0-25") {
-    //   $scope.WineSearchParams.maxPrice = 25;
-    //   $scope.WineSearchParams.minPrice = 0;
-    // }
-
-    // if ($scope.priceRange === "25-50") {
-    //   $scope.WineSearchParams.maxPrice = 50;
-    //   $scope.WineSearchParams.minPrice = 25;
-    // }
-
-    // if ($scope.priceRange === "50-75") {
-    //   $scope.WineSearchParams.maxPrice = 75;
-    //   $scope.WineSearchParams.minPrice = 50;
-    // }
-
-    // if ($scope.priceRange === "75-100") {
-    //   $scope.WineSearchParams.maxPrice = 100;
-    //   $scope.WineSearchParams.minPrice = 75;
-    // }
-
-    // if ($scope.priceRange === "+100") {
-    //   $scope.WineSearchParams.maxPrice = 1000;
-    //   $scope.WineSearchParams.minPrice = 100;
-    // }
   };
 
 });
