@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('MyCellarCtrl', function($scope, $location, FirebaseFactory, WineFactory, $uibModal) {
+app.controller('MyCellarCtrl', function($scope, $location, FirebaseFactory, WineFactory, $uibModal, $mdToast) {
 
   FirebaseFactory.getMyWines()
   .then((MyWines) => {
@@ -22,9 +22,11 @@ app.controller('MyCellarCtrl', function($scope, $location, FirebaseFactory, Wine
     FirebaseFactory.deleteWine(key)
     .then((data) => {
       FirebaseFactory.getMyWines()
-    .then((MyWines) => {
-    $scope.wines = MyWines;
-  });
+      .then((MyWines) => {
+        $mdToast.show($mdToast.simple().position("top right").textContent('Wine Deleted!'));
+        $scope.wines = MyWines;
+      });
     });
   };
+
 });

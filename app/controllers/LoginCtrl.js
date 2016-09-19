@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginCtrl', function($scope, AuthFactory, $window) {
+app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
   $scope.account = {
     email: "",
     password: ""
@@ -28,6 +28,7 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window) {
       if (userData) {
         console.info('Google login data:', userData);
         $window.location.href = '#/wines/search';
+        $mdToast.show($mdToast.simple().position("top right").textContent(`Welcome ${userData.user.displayName}`));
       }
     });
   };

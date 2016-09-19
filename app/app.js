@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("Magnificus-Vitis", ["ngRoute", 'ui.bootstrap', 'uiGmapgoogle-maps'])
+var app = angular.module("Magnificus-Vitis", ["ngRoute", 'ui.bootstrap', 'uiGmapgoogle-maps', 'ngMaterial'])
 .constant('FirebaseUrl', "https://magnificus-vitis.firebaseio.com/");
 
 //Check if user is logged in, granting access to certain pages only a user should be on

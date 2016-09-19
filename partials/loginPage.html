@@ -10,13 +10,15 @@
           Password: <input type="password" class="form-control" ng-model="account.password">
         </div>
         <div class="btn-toolbar">
-          <button type="button" class="btn btn-info" ng-click="loginWithEmailAndPassword()">Login</button>
-          <button type="button" class="btn btn-info" ng-click="registerWithEmailAndPassword()">Register</button>
+          <button type="button" class="md-button purpleBtn" ng-click="loginWithEmailAndPassword()">Login</button>
+          <button type="button" class="md-button purpleBtn" ng-click="registerWithEmailAndPassword()">Register</button>
         </div>
       </section>
 
       <section>
-        <button type="button" class="btn btn-danger" ng-click="loginWithGoogle()">Login with Google</button>
+        <div class="btn-toolbar">
+          <button type="button" class="md-button redBtn" ng-click="loginWithGoogle()">Login with a Google Account</button>
+        </div>
       </section>
     </div>
   </div>

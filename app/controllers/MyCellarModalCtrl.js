@@ -1,18 +1,11 @@
 'use strict';
 
-app.controller('MyCellarModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory, WineFactory) {
+app.controller('MyCellarModalCtrl', function($scope, $uibModalInstance, wine, FirebaseFactory, WineFactory, $mdToast) {
   $scope.wine = wine;
 
   $scope.close = () => {
     $uibModalInstance.close();
     $scope.wine = {};
-  };
-
-  $scope.findWine = () => {
-    WineFactory.getLocalStores()
-    .then ((localStores) => {
-      console.log(localStores);
-    });
   };
 
   $scope.edit = (wineKey) => {

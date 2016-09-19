@@ -25,6 +25,7 @@
     "angular-bootstrap": "^2.1.3"
   },
   "devDependencies": {
-    "angular-google-maps": "^2.3.4"
+    "angular-google-maps": "^2.3.4",
+    "angular-material": "^1.1.1"
   }
 }
