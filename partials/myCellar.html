@@ -2,8 +2,8 @@
 <div class="col-md-3 wineCard" ng-click="open(wine)" ng-repeat="wine in wines">
   <div>{{wine.wineName}}</div>
   <div>{{wine.wineVintage}}</div>
-  <p>My Rating: {{wine.personalRating}}</p>
+  <p ng-show="wine.personalRating">My Rating: {{wine.personalRating}}</p>
   <p>{{wine.personalComment}}</p>
   <img ng-src={{wine.wineImage}}>
-  <button ng-click="deleteWine(wine.key); $event.stopPropagation();" class="md-button redBtn">Throw this bottle out</button>
+  <button ng-click="deleteWine(wine.key); $event.stopPropagation();" class="md-button redBtn deleteButton">Throw this bottle out</button>
 </div>
