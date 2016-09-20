@@ -1,8 +1,9 @@
 $transparentGrey: rgba(211, 211, 211, .3);
+$winePurple: #993366;
 
 body {
   font-family: "Times New Roman", Georgia, Serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 $body-bg: transparent;
@@ -45,16 +46,16 @@ $body-bg: transparent;
 }
 
 .md-button:hover {
-  color: #993366;
+  color: $winePurple;
   background-color: #FFF;
 }
 
 .purpleBtn {
   color: #FFF;
-  background-color: #993366;
+  background-color: $winePurple;
 
   :hover {
-    color: #993366;
+    color: $winePurple;
     background-color: #EBEBEB;
   }
 }
@@ -69,14 +70,21 @@ $body-bg: transparent;
   padding: 10px;
   margin:20px 4.16% 20px 4.16%;
   text-align: center;
-  height: 375px;
+  height: 425px;
   background-color: $transparentGrey;
   color: black;
   img {
     height: 142px;
     display: block;
-    margin-left: 30%;
+    margin-left: 80px;
   }
+}
+
+.deleteButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 20%;
 }
 
 .wineSearchPage {
@@ -93,6 +101,9 @@ $body-bg: transparent;
 
 .myCellarModal {
   text-align: center;
+  md-input-container {
+    display: block;
+  }
 }
 
 .findWine {

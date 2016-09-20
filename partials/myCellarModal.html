@@ -9,15 +9,16 @@
     <p>Region: {{wine.wineRegion}}</p>
     <p>Price: {{wine.winePrice}}</p>
     <p>Your Rating: {{wine.personalRating}}</p>
-    <p>Snooth Rank: {{wine.wineRank}}</p>
+    <p>Snooth Rank: {{wine.wineRank}} / 5</p>
     <img ng-src={{wine.wineImage}}><br>
 
     <div class = "myCellarModalImputs">
-      <label for="personalComment">Personal Comment:</label>
-      <input type="textarea" id="personalComment" name="personalComment" ng-model="wine.personalComment"/><br>
-
-      <label for="personalRating">Personal Rating:</label>
-      <input type="number" name="personalRating" ng-model="wine.personalRating"/>
+      <md-input-container md-no-float>
+        <textarea type="textarea" class="inputColorChange" id="personalComment" placeholder="Add your personal comment here" max-rows="3" ng-model="wine.personalComment"></textarea><br>
+      </md-input-container>
+      <md-input-container md-no-float>
+        <input type="text" class="inputColorChange" ng-model="wine.personalRating" placeholder="Add any rating you'd like here" />
+      </md-input-container>
     </div>
   </div>
 </div>
