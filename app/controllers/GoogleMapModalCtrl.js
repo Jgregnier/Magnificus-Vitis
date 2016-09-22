@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('GoogleMapModalCtrl', function ($scope, localStores, $uibModalInstance, uiGmapGoogleMapApi, uiGmapIsReady) {
+app.controller('GoogleMapModalCtrl', function ($scope, $window, localStores, $uibModalInstance, uiGmapGoogleMapApi, uiGmapIsReady) {
 
   var stores = localStores.stores;
 

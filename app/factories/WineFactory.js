@@ -41,5 +41,9 @@ app.factory('WineFactory', function($http, $q, SnoothKey) {
     });
   };
 
-  return {getWine, getWineResults, getLocalStores};
+  return {
+    getLocalStores,
+    getWine,
+    getWineResults
+  };
 });

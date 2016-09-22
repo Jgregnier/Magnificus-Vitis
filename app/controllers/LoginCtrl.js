@@ -9,7 +9,12 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
   $scope.loginWithEmailAndPassword = () => {
     AuthFactory.loginUserWithEmail($scope.account)
     .then((data) => {
-      $mdToast.show($mdToast.simple().position("top right").textContent("Welcome!"));
+      if (data === undefined) {
+        $mdToast.show($mdToast.simple().position("top right").textContent("There was a problem logging in, try again"));
+      } else {
+        $mdToast.show($mdToast.simple().position("top right").textContent("Welcome!"));
+      }
+
       console.log("logged in with email data", data);
       $window.location.href = '#/wines/search';
     });
@@ -18,8 +23,12 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
   $scope.registerWithEmailAndPassword = () => {
     AuthFactory.createUser($scope.account)
     .then((data) => {
-      console.log("Email and password registration Data", data);
-      AuthFactory.loginUserWithEmail($scope.account);
+      AuthFactory.loginUserWithEmail($scope.account)
+      .then((data) => {
+        console.log("this data", data);
+        $window.location.href = '#/wines/search';
+        $mdToast.show($mdToast.simple().position("top right").textContent(`New Account Made With ${data.providerData[0].email}`));
+      });
     });
   };
 
@@ -27,8 +36,8 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $window, $mdToast) {
     AuthFactory.loginUserWithGoogle()
     .then((userData) => {
       if (userData) {
-        $mdToast.show($mdToast.simple().position("top right").textContent(`Welcome ${userData.user.displayName}`));
         console.info('Google login data:', userData);
+        $mdToast.show($mdToast.simple().position("top right").textContent(`Welcome ${userData.user.displayName}`));
         $window.location.href = '#/wines/search';
       }
     });

@@ -41,5 +41,11 @@ app.factory('FirebaseFactory', function ($q, $http, FbCreds, FirebaseUrl, AuthFa
       });
     });
   };
-  return {getMyWines, saveWine, deleteWine, editWine};
+
+  return {
+    deleteWine,
+    editWine,
+    getMyWines,
+    saveWine
+  };
 });
