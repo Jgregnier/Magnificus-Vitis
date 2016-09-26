@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('MyCellarCtrl', function($scope, $location, FirebaseFactory, WineFactory, $uibModal, $mdToast) {
+app.controller('MyCellarCtrl', function($scope, $location, WineFactory, FirebaseFactory, $uibModal, $mdToast) {
 
   FirebaseFactory.getMyWines()
   .then((MyWines) => {
